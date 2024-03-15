@@ -52,15 +52,15 @@ set -e
 To run Docker as a non-privileged user, consider setting up the
 Docker daemon in rootless mode for your user:
 
-sudo sh -eux <<EOF
-# Install newuidmap & newgidmap binaries
-apt-get install -y uidmap
-EOF
-dockerd-rootless-setuptool.sh install
+
+5 # Install newuidmap & newgidmap binaries
+
+$ sudo apt-get install -y uidmap
+
+6. $ dockerd-rootless-setuptool.sh install
+
 
 Visit https://docs.docker.com/go/rootless/ to learn about rootless mode.
-
-
 To run the Docker daemon as a fully privileged service, but granting non-root
 users access, refer to https://docs.docker.com/go/daemon-access/
 
