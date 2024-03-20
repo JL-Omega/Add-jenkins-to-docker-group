@@ -57,7 +57,7 @@ Docker daemon in rootless mode for your user:
 $ sudo apt-get install -y uidmap
 
 Load ip_tables module(for redhat)
-$ sudo ym install modprobe ip_tables
+$ sudo yum install modprobe ip_tables
 
 6. $ dockerd-rootless-setuptool.sh install
 
