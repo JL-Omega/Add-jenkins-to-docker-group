@@ -53,10 +53,10 @@ To run Docker as a non-privileged user, consider setting up the
 Docker daemon in rootless mode for your user:
 
 
-5 # Install newuidmap & newgidmap binaries(for debian)
+5 # Install newuidmap & newgidmap binaries for debian
 $ sudo apt-get install -y uidmap
 
-Load ip_tables module(for redhat)
+Load ip_tables module for redhat (NB. Fedora doesn't need to install this line)
 $ sudo yum install modprobe ip_tables
 
 6. $ dockerd-rootless-setuptool.sh install
