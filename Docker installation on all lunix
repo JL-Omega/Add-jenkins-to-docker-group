@@ -59,6 +59,22 @@ $ sudo apt-get install -y uidmap
 Load ip_tables module for redhat (NB. Fedora doesn't need to install this line)
 $ sudo yum install modprobe ip_tables
 
+for centos:
+########## BEGIN ##########
+sudo sh -eux <<EOF
+# Set user.max_user_namespaces
+cat <<EOT > /etc/sysctl.d/51-rootless.conf
+user.max_user_namespaces = 28633
+EOT
+sysctl --system
+# Add subuid entry for vagrant
+echo "vagrant:100000:65536" >> /etc/subuid
+# Add subgid entry for vagrant
+echo "vagrant:100000:65536" >> /etc/subgid
+EOF
+########## END ##########
+
+
 6. $ dockerd-rootless-setuptool.sh install
 
 
